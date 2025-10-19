@@ -13,6 +13,24 @@
         zmk,physical_layout = &morizon_layout;
     };
 
+    /* Wake on any key in the column that contains RC(7,0)
+       (column 0 -> &pro_micro 20) */
+    wake-column0: wake-column0 {
+        compatible = "gpio-keys";
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        /* Use the column GPIO as the wake source */
+        wakeup-gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
+
+        /* single logical button is fine for wake; linux,code optional */
+        button@0 {
+            label = "WAKE_COL0";
+            gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
+            linux,code = <KEY_WAKEUP>;
+        };
+    };
+
     kscan0: kscan_0 {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
