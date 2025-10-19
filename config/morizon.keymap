@@ -31,7 +31,7 @@
                 &kp TILDE  &kp Q    &kp W &kp E &kp R   &kp T                         &kp Y         &kp U    &kp I     &kp O   &kp P   &kp BSPC
                 &kp TAB &kp A    &kp S &kp D &kp F   &kp G       &none   &none     &kp H         &kp J    &kp K     &kp L   &kp SEMI     &kp ENTER
                 &kp LSHFT &kp Z    &kp X &kp C &kp V   &kp B       &none   &none     &kp N         &kp M    &kp COMMA &kp DOT &kp SLASH &kp RSHFT
-                &kp LCTRL  &kp LALT &none &none &kp SYM &none &kp ENTER &kp ESC &kp FUN &none &none     &none   &kp RALT  &kp RCTRL
+                &kp LCTRL  &kp LALT &kp LGUI &none &kp ENTER &mo SYM &kp ENTER &kp ESC &mo FUN &kp SPACE &none     &kp RGUI   &kp RALT  &kp RCTRL
             >;
         };
 
