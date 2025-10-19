@@ -42,23 +42,6 @@
             ;
     };
 
-    /* Wake on any key in the column that contains RC(7,0)
-       (column 0 -> &pro_micro 20). Placing this node after kscan avoids parsing issues. */
-    wake-column0: wake-column0 {
-        compatible = "gpio-keys";
-        #address-cells = <1>;
-        #size-cells = <0>;
-
-        /* Use the column GPIO as the wake source */
-        wakeup-gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
-
-        button@0 {
-            label = "WAKE_COL0";
-            gpios = <&pro_micro 20 GPIO_ACTIVE_HIGH>;
-            linux,code = <KEY_WAKEUP>;
-        };
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <7>;
@@ -70,5 +53,10 @@
           RC(3,0)  RC(3,1)  RC(3,2)  RC(3,3)  RC(3,4)  RC(3,5)  RC(3,6)  RC(8,0)  RC(8,1)  RC(8,2)  RC(8,3) RC(8,4) RC(8,5) RC(8,6)
           RC(4,0)  RC(4,1)  RC(4,2)  RC(4,3)  RC(4,4)  RC(4,5)  RC(4,6)  RC(9,0)  RC(9,1)  RC(9,2)  RC(9,3) RC(9,4) RC(9,5) RC(9,6)
         >;
+    };
+
+  	soft_off_wakers {
+        compatible = "zmk,soft-off-wakeup-sources";
+        wakeup-sources = <&kscan0>;
     };
 };
