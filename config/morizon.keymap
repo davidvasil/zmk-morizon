@@ -38,7 +38,7 @@
         extend_layer {
             bindings = <
                 &trans      &trans    &trans    &trans    &trans     &trans                               &trans     &trans     &trans     &trans     &trans    &trans
-                &none       &none     &kp PRCRN &none     &none      &none                                &kp PG_UP  &kp PG_DN  &kp INS    &kp HOME   &kp END   &none 
+                &none       &none     &kp PSCRN &none     &none      &none                                &kp PG_UP  &kp PG_DN  &kp INS    &kp HOME   &kp END   &none 
                 &none       &sk LCTRL &sk LALT  &none     &sk LSHIFT &none        &kp C_VOL_UP &trans     &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none     &none
                 &none       &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V)  &kp LC(B)    &kp C_VOL_DN &trans     &kp DEL    &kp BSPC   &none      &none      &none     &none
                 &trans      &trans    &trans    &trans    &trans     &trans       &kp C_MUTE   &trans     &none      &trans     &trans     &trans     &trans    &trans
