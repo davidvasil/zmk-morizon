@@ -28,7 +28,7 @@
 		// both thumb keys
 		combo_function {
 			timeout-ms = <200>;
-			key-positions = <58 61>;
+			key-positions = <57 60>;
 			bindings = <&mo FUNC>;
 		};
 	};
