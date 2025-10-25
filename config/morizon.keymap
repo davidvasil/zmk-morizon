@@ -15,11 +15,22 @@
 #define DEF 0
 #define EXT 1
 #define SYM 2
+#define FUNC 3
 
 &lt {
     tapping-term-ms = <180>;
     flavor = "tap-preferred";
 };
+
+	combos {
+		compatible = "zmk,combos";
+		// both outside thumb keys
+		combo_accent {
+			timeout-ms = <200>;
+			key-positions = <58 61>;
+			bindings = <&mo FUNC>;
+		};
+	};
 
  / {
     keymap {
@@ -48,10 +59,20 @@
         symbol_layer {
             bindings = <
                 &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                                  &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
-                &trans     &kp GRAVE  &kp SQT    &kp DQT    &kp LPAR   &kp RPAR                                &none     &kp N7   &kp N8    &kp N9    &none     &kp F12
-                &trans     &kp BSLH   &kp UNDER  &kp PIPE   &kp LBKT   &kp RBKT      &studio_unlock &soft_off  &kp N0    &kp N4   &kp N5    &kp N6    &kp ENTER &trans
-                &trans     &kp PLUS   &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC      &bt BT_NXT     &trans     &kp DOT   &kp N1   &kp N2    &kp N3    &kp FSLH  &trans
-                &trans     &trans     &trans     &trans     &trans     &trans        &bt BT_SEL 0   &bt BT_CLR &trans    &trans   &trans    &trans    &trans    &trans
+                &trans     &kp GRAVE  &kp SQT    &kp DQT    &kp LPAR   &kp RPAR                                &none     &kp N7   &kp N8    &kp N9    &kp BSPC  &kp F12
+                &trans     &kp BSLH   &kp UNDER  &kp PIPE   &kp LBKT   &kp RBKT      &trans         &trans     &kp N0    &kp N4   &kp N5    &kp N6    &kp ENTER &trans
+                &trans     &kp PLUS   &kp MINUS  &kp EQUAL  &kp LBRC   &kp RBRC      &trans         &trans     &kp DOT   &kp N1   &kp N2    &kp N3    &kp FSLH  &trans
+                &trans     &trans     &trans     &trans     &trans     &trans        &trans         &trans     &trans    &trans   &trans    &trans    &trans    &trans
+            >;
+        };
+
+        function_layer {
+            bindings = <
+                &trans     &kp F1     &kp F2     &kp F3     &kp F4     &kp F5                                  &kp F6    &kp F7   &kp F8    &kp F9    &kp F10   &kp F11
+                &trans     &none      &none      &none      &none      &none                                   &none     &none    &none     &none     &none     &kp F12
+                &trans     &none      &none      &none      &none      &none        &studio_unlock &soft_off   &none     &none    &none     &none     &none     &trans
+                &trans     &none      &none      &none      &none      &none        &bt BT_NXT     &trans      &none     &none    &none     &none     &none     &trans
+                &trans     &trans     &trans     &trans     &trans     &trans       &bt BT_SEL 0   &bt BT_CLR  &trans    &trans   &trans    &trans    &trans    &trans
             >;
         };
     };
