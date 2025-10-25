@@ -22,17 +22,17 @@
     flavor = "tap-preferred";
 };
 
+ / {
 	combos {
 		compatible = "zmk,combos";
-		// both outside thumb keys
-		combo_accent {
+		// both thumb keys
+		combo_function {
 			timeout-ms = <200>;
 			key-positions = <58 61>;
 			bindings = <&mo FUNC>;
 		};
 	};
 
- / {
     keymap {
         compatible = "zmk,keymap";
 
